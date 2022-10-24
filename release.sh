@@ -4,6 +4,8 @@ dir=$PWD
 
 apps=$(<read_file.txt)
 
+echo "test"
+
 for name in $apps;
 do
  cd $dir/$name
