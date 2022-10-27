@@ -6,7 +6,7 @@ from signal import SIGKILL
 from os import kill
 
 subprocess.Popen("vtex use testautomation", shell=True)
-sleep(10)
+sleep(5)
 
 currentDirectory = os.getcwd()
 
@@ -14,15 +14,12 @@ apps = open('read_file.txt','r')
 appList = apps.readlines()
 
 def appLink():
-    subprocess.Popen("echo enter 4", shell=True)
     cmd = "echo 'yes' |vtex link > output.txt"
     subprocess.Popen(cmd, stdout= True, shell=True)
 
 
 for app in appList:
     os.chdir(currentDirectory + '/' + app.replace("\n",""))
-    subprocess.Popen("echo enter 1", shell=True)
-    subprocess.Popen("touch output.txt", shell=True)
     sleep(3)
     process = Process(target= appLink)
     process.start()
@@ -32,7 +29,6 @@ for app in appList:
             sleep(5)
             contents = file.read()
             sentence = 'App linked successfully'
-            subprocess.Popen("echo enter 3", shell=True)
             result = contents.find(sentence)
             if result != -1:
                 var = False
