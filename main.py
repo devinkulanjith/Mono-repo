@@ -30,8 +30,8 @@ for app in appList:
     subprocess.Popen("echo enter 2", shell=True)
     while var:
         with open('output.txt', 'r', encoding='utf-8') as file:
+            sleep(5)
             contents = file.read()
-
             sentence = 'App linked successfully'
             subprocess.Popen("echo enter 3", shell=True)
             result = contents.find(sentence)
