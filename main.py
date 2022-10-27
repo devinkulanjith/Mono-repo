@@ -15,7 +15,7 @@ appList = apps.readlines()
 
 def appLink():
     subprocess.Popen("echo enter 4", shell=True)
-    cmd = "vtex link > output.txt"
+    cmd = "echo 'yes' |vtex link > output.txt"
     subprocess.Popen(cmd, stdout= True, shell=True)
 
 
@@ -27,7 +27,6 @@ for app in appList:
     process = Process(target= appLink)
     process.start()
     var = True
-    subprocess.Popen("echo 'yes' |vtex link", stdout=True, shell=True)
     while var:
         with open('output.txt', 'r', encoding='utf-8') as file:
             sleep(5)
@@ -38,7 +37,7 @@ for app in appList:
             if result != -1:
                 var = False
                 print(app + " app link successful ... process will be killed")
-                # subprocess.Popen("rm output.txt", shell=True)
+                subprocess.Popen("rm output.txt", shell=True)
                 try:
                     kill(process.pid, SIGKILL)
                 except: 
