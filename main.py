@@ -15,7 +15,7 @@ appList = apps.readlines()
 
 def appLink():
     subprocess.Popen("echo enter 4", shell=True)
-    cmd = "vtex link > output.txt&"
+    cmd = "vtex link > output.txt"
     subprocess.Popen(cmd, stdout= True, shell=True)
 
 
