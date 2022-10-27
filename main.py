@@ -34,6 +34,7 @@ for app in appList:
             contents = file.read()
             sentence = 'App linked successfully'
             subprocess.Popen("echo enter 3", shell=True)
+            subprocess.Popen("echo enter '{contents}'", shell=True)
             result = contents.find(sentence)
             if result != -1:
                 var = False
