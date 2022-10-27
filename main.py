@@ -34,12 +34,11 @@ for app in appList:
             contents = file.read()
             sentence = 'App linked successfully'
             subprocess.Popen("echo enter 3", shell=True)
-            subprocess.Popen(contents, shell=True)
             result = contents.find(sentence)
             if result != -1:
                 var = False
                 print(app + " app link successful ... process will be killed")
-                subprocess.Popen("rm output.txt", shell=True)
+                # subprocess.Popen("rm output.txt", shell=True)
                 try:
                     kill(process.pid, SIGKILL)
                 except: 
