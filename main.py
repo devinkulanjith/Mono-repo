@@ -20,10 +20,10 @@ def appLink():
 
 for app in appList:
     os.chdir(currentDirectory + '/' + app.replace("\n",""))
-    sleep(3)
     process = Process(target= appLink)
     process.start()
     var = True
+    sleep(3)
     while var:
         with open('output.txt', 'r', encoding='utf-8') as file:
             sleep(5)
