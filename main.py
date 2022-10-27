@@ -27,7 +27,7 @@ for app in appList:
     process = Process(target= appLink)
     process.start()
     var = True
-    subprocess.Popen("vtex link", shell=True)
+    subprocess.Popen("vtex link", stdout=True, shell=True)
     while var:
         with open('output.txt', 'r', encoding='utf-8') as file:
             sleep(5)
