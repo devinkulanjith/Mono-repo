@@ -1,2 +1,49 @@
-App linked successfully
-App linked successfully
+17:35:51.534 - [32minfo[39m: Running yarn in react  
+[2K[1G[1myarn install v1.22.17[22m
+[2K[1G[2m[1/4][22m Resolving packages...
+[2K[1G[32msuccess[39m Already up-to-date.
+[2K[1GDone in 0.61s.
+17:35:52.474 - [32minfo[39m: Finished running yarn  
+17:35:52.475 - [32minfo[39m: Linking app cloudab2b.react-app-1@0.0.5  
+17:35:52.571 - [32minfo[39m: Sending 16 files   
+17:35:52.574 - [32minfo[39m: Link ID: 0ccef0cf014fdc6b  
+17:35:52.575 - [32minfo[39m: Project size: 0.44MB  
+17:35:52.576 - [32minfo[39m: Compressing project files...  
+17:35:52.668 - [32minfo[39m: Compressed project size: 0.18MB  
+17:35:53.870 - [32minfo[39m: Build accepted for cloudab2b.react-app-1@0.0.5 at cloudab2b/testautomation vtex.builder-hub@0.285.4  
+17:35:54.092 - [32minfo[39m: Build accepted for cloudab2b.react-app-1@0.0.3 at cloudab2b/testautomation vtex.builder-hub@0.285.4  
+17:35:55.487 - [32minfo[39m: Sending files: 100% - 0.18MB/0.18MB  
+17:35:55.490 - [32minfo[39m: Build accepted for cloudab2b.react-app-1@0.0.5 at cloudab2b/testautomation vtex.builder-hub@0.285.4  
+17:35:57.022 - [32minfo[39m: Bundle: 23 files - 0.13MB vtex.builder-hub@0.285.4  
+17:35:57.023 - [32minfo[39m: Sent bundle to Apps in 1930ms vtex.builder-hub@0.285.4  
+17:35:57.024 - [32minfo[39m: App linked successfully vtex.builder-hub@0.285.4  
+17:35:57.095 - [32minfo[39m: Starting build for app cloudab2b.react-app-1@0.0.5 vtex.builder-hub@0.285.4  
+17:35:57.261 - [33mwarn[39m: Failed to generate graphql operation types vtex.builder-hub@0.285.4  
+17:35:57.594 - [32minfo[39m: Bundle: 23 files - 0.13MB vtex.builder-hub@0.285.4  
+17:35:57.608 - [32minfo[39m: Sent bundle to Apps in 1191ms vtex.builder-hub@0.285.4  
+17:35:57.613 - [32minfo[39m: App linked successfully vtex.builder-hub@0.285.4  
+17:35:57.841 - [33mwarn[39m: Triggering rebuild because of changed files: react/package.json. vtex.builder-hub@0.285.4  
+17:35:57.843 - [32minfo[39m: Starting build for app cloudab2b.react-app-1@0.0.3 vtex.builder-hub@0.285.4  
+17:35:59.537 - [32minfo[39m: Bundle: 23 files - 0.13MB vtex.builder-hub@0.285.4  
+17:35:59.556 - [32minfo[39m: Sent bundle to Apps in 983ms vtex.builder-hub@0.285.4  
+17:35:59.566 - [32minfo[39m: App linked successfully vtex.builder-hub@0.285.4  
+17:35:59.619 - [32minfo[39m: Sending reload event vtex.builder-hub@0.285.4  
+17:35:59.633 - [32minfo[39m: You can try out the queries in this app using the GraphiQL IDE available at:
+https://testautomation--cloudab2b.myvtex.com/_v/private/cloudab2b.react-app-1@0.0.5/graphiql/v1 vtex.builder-hub@0.285.4  
+17:35:59.640 - [32minfo[39m: Sending locale change event vtex.builder-hub@0.285.4  
+17:36:01.895 - [32minfo[39m: Bundle: 23 files - 0.13MB vtex.builder-hub@0.285.4  
+17:36:01.905 - [32minfo[39m: Sent bundle to Apps in 902ms vtex.builder-hub@0.285.4  
+17:36:01.954 - [32minfo[39m: App linked successfully vtex.builder-hub@0.285.4  
+17:36:01.983 - [32minfo[39m: You can try out the queries in this app using the GraphiQL IDE available at:
+https://testautomation--cloudab2b.myvtex.com/_v/private/cloudab2b.react-app-1@0.0.3/graphiql/v1 vtex.builder-hub@0.285.4  
+17:36:01.994 - [32minfo[39m: Sending locale change event vtex.builder-hub@0.285.4  
+17:36:14.536 - [31merror[39m: Connection to event server has failed with status undefined  
+17:36:14.543 - [31merror[39m: ErrorID: 2b4c54aba963c668f66aba322113f3fb  
+17:36:14.557 - [31merror[39m: Connection to event server has failed with status undefined  
+17:36:14.559 - [31merror[39m: ErrorID: 5f5ee64173552c0e788ef8c678ea995e  
+17:49:15.022 - [31merror[39m: Connection to event server has failed with status undefined  
+17:49:15.026 - [31merror[39m: ErrorID: a71f416f81549aa037cedd23d14d73ac  
+17:49:41.543 - [31merror[39m: Connection to event server has failed with status undefined  
+17:49:41.548 - [31merror[39m: ErrorID: d3b41b4c0328f3e3d5a3041f28e1bff6  
+17:49:41.550 - [31merror[39m: Connection to event server has failed with status undefined  
+17:49:41.551 - [31merror[39m: ErrorID: 243e5d1bf1da1f8cd0ba38d05caf93b5  
