@@ -4,9 +4,11 @@ dir=$PWD
 
 apps=$(<read_file.txt)
 
+vtex use testautomation
 
 for name in $apps;
 do
  cd $dir/$name
- echo "yes" | vtex release patch stable
+ echo "yes" | vtex install
+ sleep 5
 done
