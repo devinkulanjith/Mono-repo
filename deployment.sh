@@ -14,5 +14,4 @@ do
  sleep 5
  echo "yes" | vtex install
  sleep 5
-
 done

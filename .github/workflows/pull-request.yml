@@ -78,6 +78,7 @@ jobs:
 
   AppLink:
     runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
     steps:
       - uses: actions/checkout@master
         with:
@@ -103,9 +104,17 @@ jobs:
           account: cloudab2b
           app-key: ${{ secrets.CLOUDA_B2B_APP_KEY }}
           app-token: ${{ secrets.CLOUDA_B2B_APP_TOKEN }}
-      - name: app links
-        run: python3 main.py
-        shell: bash
+      - uses: Stockopedia/action-get-changed-files@v1
+        id: get_changed
+        with:
+          github-token: ${{ secrets.CLOUDAB2B_GITHUB_TOKEN }}
+          foldersOnly: true
+          format: json
+      - name: Echo
+        run: echo ${{ steps.get_changed.outputs.changed }}
+      # - name: app links
+      #   run: python3 main.py
+      #   shell: bash
 
   deployments:
     runs-on: ubuntu-latest
