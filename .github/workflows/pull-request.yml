@@ -78,7 +78,7 @@ jobs:
 
   AppLink:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
+    if: github.event_name = 'pull_request'
     steps:
       - uses: actions/checkout@master
         with:
