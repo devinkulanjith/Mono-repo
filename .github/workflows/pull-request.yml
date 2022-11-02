@@ -110,7 +110,7 @@ jobs:
           foldersOnly: true
           format: json
       - name: Echo
-        run: echo ${{ steps.get_changed.outputs.changed }}
+        run: echo "INPUT_NUM=${{ steps.get_changed.outputs.changed }}" >> $GITHUB_ENV
       # - name: app links
       #   run: python3 main.py
       #   shell: bash

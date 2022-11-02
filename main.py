@@ -13,28 +13,30 @@ currentDirectory = os.getcwd()
 apps = open('read_file.txt','r')
 appList = apps.readlines()
 
-def appLink():
-    cmd = "echo 'yes' |vtex link > output.txt"
-    subprocess.Popen(cmd, stdout= True, shell=True)
+num = os.environ.get("INPUT_NUM")
+print('check',num)
+# def appLink():
+#     cmd = "echo 'yes' |vtex link > output.txt"
+#     subprocess.Popen(cmd, stdout= True, shell=True)
 
 
-for app in appList:
-    os.chdir(currentDirectory + '/' + app.replace("\n",""))
-    process = Process(target= appLink)
-    process.start()
-    var = True
-    sleep(3)
-    while var:
-        with open('output.txt', 'r', encoding='utf-8') as file:
-            sleep(5)
-            contents = file.read()
-            sentence = 'App linked successfully'
-            result = contents.find(sentence)
-            if result != -1:
-                var = False
-                print(app + " app link successful ... process will be killed")
-                subprocess.Popen("rm output.txt", shell=True)
-                try:
-                    kill(process.pid, SIGKILL)
-                except: 
-                    print("something went wrong")
+# for app in appList:
+#     os.chdir(currentDirectory + '/' + app.replace("\n",""))
+#     process = Process(target= appLink)
+#     process.start()
+#     var = True
+#     sleep(3)
+#     while var:
+#         with open('output.txt', 'r', encoding='utf-8') as file:
+#             sleep(5)
+#             contents = file.read()
+#             sentence = 'App linked successfully'
+#             result = contents.find(sentence)
+#             if result != -1:
+#                 var = False
+#                 print(app + " app link successful ... process will be killed")
+#                 subprocess.Popen("rm output.txt", shell=True)
+#                 try:
+#                     kill(process.pid, SIGKILL)
+#                 except: 
+#                     print("something went wrong")
