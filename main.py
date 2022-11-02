@@ -10,8 +10,10 @@ sleep(5)
 
 currentDirectory = os.getcwd()
 
-apps = open('read_file.txt','r')
-appList = apps.readlines()
+apps = open('president_order.txt','r')
+appListOrder = apps.readlines()
+
+vtexAppLinkOrder = []
 
 appListString = os.environ.get("CHANGED_DIRECTORIES")
 
@@ -22,7 +24,12 @@ def appLink():
     subprocess.Popen(cmd, stdout= True, shell=True)
 
 if len(appList) != 0:
-    for app in appList:
+    for app in appListOrder:
+       appName = app.replace('\n','')
+       if appName in appList:
+           vtexAppLinkOrder.append(appName)
+
+    for app in vtexAppLinkOrder:
         os.chdir(currentDirectory + '/' + app)
         process = Process(target= appLink)
         process.start()
