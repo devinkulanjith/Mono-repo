@@ -15,6 +15,7 @@ appList = apps.readlines()
 
 num = os.environ.get("INPUT_NUM")
 print('check',num)
+subprocess.Popen("echo $num", stdout= True, shell=True)
 # def appLink():
 #     cmd = "echo 'yes' |vtex link > output.txt"
 #     subprocess.Popen(cmd, stdout= True, shell=True)
