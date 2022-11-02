@@ -14,7 +14,7 @@ apps = open('read_file.txt','r')
 appList = apps.readlines()
 
 num = os.environ.get("INPUT_NUM")
-
+print('num',num)
 test = num.split('[')[1].split(']')
 print(test)
 # def appLink():
