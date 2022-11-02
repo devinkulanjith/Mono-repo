@@ -15,7 +15,7 @@ appList = apps.readlines()
 
 num = os.environ.get("INPUT_NUM")
 print('num',num)
-test = num.split('[')[1].split(']')
+test = num.split('[')[1].split(']')[0].split(',')
 print(test)
 # def appLink():
 #     cmd = "echo 'yes' |vtex link > output.txt"
