@@ -111,9 +111,10 @@ jobs:
           format: json
       - name: Echo
         run: echo "INPUT_NUM=${{ steps.get_changed.outputs.changed }}" >> $GITHUB_ENV
-      # - name: app links
-      #   run: python3 main.py
-      #   shell: bash
+        shell: bash
+      - name: app links
+        run: python3 main.py
+        shell: bash
 
   deployments:
     runs-on: ubuntu-latest
