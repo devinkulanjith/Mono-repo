@@ -180,4 +180,4 @@ jobs:
       - name: Run step only when any of the above files change.
         if: steps.changes.outputs.apps == 'true'
         run: |
-          echo "Changed files: ${{ steps.changes.outputs.react-app-1}}"
+          echo "Changed files: ${{ steps.changes.outputs.apps}}"
