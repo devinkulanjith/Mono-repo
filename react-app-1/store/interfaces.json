@@ -1,8 +1,5 @@
 {
   "one-liner-note": {
     "component": "Greeting"
-  },
-  "one-liner-not": {
-    "component": "Greet"
   }
 }

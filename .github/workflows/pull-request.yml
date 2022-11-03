@@ -178,8 +178,8 @@ jobs:
             **/*.json
             **/**/*.json
             **/interfaces.json
-            react-app-1/store/interfaces.json
-            **/**/**/interfaces.json
+            ./react-app-1/store/interfaces.json
+            ./**/**/interfaces.json
       - name: Run step only when any of the above files change.
         if: steps.verify-changed-files.outputs.files_changed == 'true'
         run: |
