@@ -170,14 +170,12 @@ jobs:
           app-key: ${{ secrets.CLOUDA_B2B_APP_KEY }}
           app-token: ${{ secrets.CLOUDA_B2B_APP_TOKEN }}  
       - name: get file changed
-        uses: dorny/paths-filter@v2
-        id: changes
+        uses: tj-actions/verify-changed-files@v12
+        id: verify-changed-files
         with: 
-          filters: |
-            apps:
-              - 'react-app-1/store/**'
-              - 'react-app-2/store/**'
+          files: |
+            *.txt
       - name: Run step only when any of the above files change.
-        if: steps.changes.outputs.apps == 'true'
+        if: steps.verify-changed-files.outputs.files_changed == 'true'
         run: |
-          echo "Changed files: ${{ steps.changes.outputs.apps}}"
+          echo "Changed files: ${{ steps.verify-changed-files.outputs.changed_files }}"
