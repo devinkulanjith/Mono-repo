@@ -4,8 +4,5 @@
   },
   "one-liner-not": {
     "component": "Greet"
-  },
-  "one-liner-not-two": {
-    "component": "Greet"
   }
 }
