@@ -175,7 +175,7 @@ jobs:
 
       - name: Change file in directory
         run: |
-          echo "Changed" > test_directory/new.txt    
+          echo "Changed" > new.txt    
       - name: get file changed
         uses: tj-actions/verify-changed-files@v12
         id: verify-changed-files
