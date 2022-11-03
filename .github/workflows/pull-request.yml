@@ -169,11 +169,19 @@ jobs:
           account: cloudab2b
           app-key: ${{ secrets.CLOUDA_B2B_APP_KEY }}
           app-token: ${{ secrets.CLOUDA_B2B_APP_TOKEN }}
+      - name: Change text file
+        run: |
+          echo "Modified" > new.txt
+
+      - name: Change file in directory
+        run: |
+          echo "Changed" > test_directory/new.txt    
       - name: get file changed
         uses: tj-actions/verify-changed-files@v12
         id: verify-changed-files
         with: 
           files: |
+            *.txt
             **/*.json
             **/**/*.json
             **/interfaces.json
