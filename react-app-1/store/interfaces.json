@@ -1,5 +1,8 @@
 {
   "one-liner-note": {
     "component": "Greeting"
+  },
+  "one-liner-note-1": {
+    "component": "Greeting"
   }
 }
