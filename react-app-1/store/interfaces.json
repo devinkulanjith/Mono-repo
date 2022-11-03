@@ -4,8 +4,5 @@
   },
   "one-liner-note-1": {
     "component": "Greeting"
-  },
-  "one-liner-note-2": {
-    "component": "Greeting"
   }
 }
