@@ -180,4 +180,4 @@ jobs:
       - name: Run step only when any of the above files change.
         if: steps.changes.outputs.apps == 'true'
         run: |
-          echo "Changed files: ${{ steps.changes.outputs.MONO-REPO}}"
+          echo "Change files: ${{ steps.changes.outputs.MONO-REPO}}"
