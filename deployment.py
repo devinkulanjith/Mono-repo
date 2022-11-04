@@ -1,5 +1,5 @@
 import os
-# import subprocess
+import subprocess
 
 
 # currentDirectory = os.getcwd()
@@ -8,6 +8,11 @@ import os
 # appListOrder = apps.readlines()
 
 # vtexAppLinkOrder = []
+
+
+ # Diff HEAD with the previous commit
+
+          # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
 
 # subprocess.Popen("vtex use testautomation", shell=True)
 

@@ -33,12 +33,16 @@ jobs:
           Write-Host "::set-output name=changed_file::$SourceDiff"
 
       # Run the step only with "docs_changed" equals "True"
-      - shell: pwsh
-        # steps.<step_id>.outputs.<output name>
+      - name: Echo
         if: steps.check_file_changed.outputs.docs_changed == 'True'
-        run: | 
-          echo "CHANGED_FILES=${{ steps.check_file_changed.outputs.changed_file }}" >> $GITHUB_ENV 
-          echo "publish docs"
+        run: echo "CHANGED_FILES=${{ steps.check_file_changed.outputs.docs_changed }}" >> $GITHUB_ENV
+        shell: bash
+      # - shell: bash
+        # steps.<step_id>.outputs.<output name>
+        # if: steps.check_file_changed.outputs.docs_changed == 'True'
+        # run: | 
+        #   echo "CHANGED_FILES=${{ steps.check_file_changed.outputs.changed_file }}" >> $GITHUB_ENV 
+        #   echo "publish docs"
       - name: app deployments
         run: python3 deployment.py
         shell: bash
