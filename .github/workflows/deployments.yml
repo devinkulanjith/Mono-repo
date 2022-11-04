@@ -21,6 +21,7 @@ jobs:
         # Give an id to the step, so we can reference it later
         id: check_file_changed
         run: |
+          python3 dep.py
           # Diff HEAD with the previous commit
           $diff = git diff --name-only HEAD^ HEAD
 

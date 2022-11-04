@@ -14,7 +14,8 @@ import subprocess
 
           # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
 
-# subprocess.Popen("vtex use testautomation", shell=True)
+# cmd = "git diff --name-only HEAD^ HEAD"
+# subprocess.Popen(cmd, stdout=True, shell=True)
 
 
 # appListString = os.environ.get("CHANGED_DIRECTORIES")
