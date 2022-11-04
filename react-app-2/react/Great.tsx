@@ -4,7 +4,7 @@ type Props = {
   name: string
 }
 
-function Greeting({ name }: Props) {
+function Greet({ name }: Props) {
   return (
     <div>
        <div>Hey, {name}</div>
@@ -13,4 +13,4 @@ function Greeting({ name }: Props) {
   )
 }
 
-export default Greeting
+export default Greet
