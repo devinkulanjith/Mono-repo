@@ -1,9 +1,8 @@
 name: IO actions
 'on':
-  pull_request:
-  push:
-    branches:
-      - 'master'
+    pull_request:
+    push:
+
 jobs:
   io-app-test:
     name: IO app test
@@ -149,7 +148,7 @@ jobs:
 
   conditional_step:
     runs-on: 'ubuntu-20.04'
-    if: github.event.pull_request.merged == true
+    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
     steps:
       - uses: actions/checkout@v2
         with:
