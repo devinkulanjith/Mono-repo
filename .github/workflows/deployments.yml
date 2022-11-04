@@ -37,8 +37,8 @@ jobs:
         # steps.<step_id>.outputs.<output name>
         if: steps.check_file_changed.outputs.docs_changed == 'True'
         run: | 
-          echo "publish docs"
           echo "CHANGED_FILES=${{ steps.check_file_changed.outputs.changed_file }}" >> $GITHUB_ENV 
+          echo "publish docs"
       - name: app deployments
         run: python3 deployment.py
         shell: bash
