@@ -1,6 +1,6 @@
 name: Apps Link
 'on':
-    pull_request:
+    push:
 
 jobs:
   AppLink:
