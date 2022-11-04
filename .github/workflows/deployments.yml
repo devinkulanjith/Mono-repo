@@ -30,7 +30,7 @@ jobs:
           echo $SourceDiff
           # Set the output named "docs_changed"
           Write-Host "::set-output name=docs_changed::$HasDiff"
-          Write-Host "::set-output name=changed_file::$SourceDiff"
+          Write-Host "::set-output name=changed_file::$diff"
 
       # Run the step only with "docs_changed" equals "True"
       - name: Echo
