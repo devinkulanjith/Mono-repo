@@ -35,7 +35,7 @@ jobs:
       # Run the step only with "docs_changed" equals "True"
       - name: Echo
         if: steps.check_file_changed.outputs.docs_changed == 'True'
-        run: echo "CHANGED_FILES=${{ steps.check_file_changed.outputs.docs_changed }}" >> $GITHUB_ENV
+        run: echo "CHANGED_FILES=${{ steps.check_file_changed.outputs.changed_file }}" >> $GITHUB_ENV
         shell: bash
       # - shell: bash
         # steps.<step_id>.outputs.<output name>
