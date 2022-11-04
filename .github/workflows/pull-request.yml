@@ -3,7 +3,7 @@ name: IO actions
   pull_request:
   push:
     branches:
-      - 'main'
+      - 'master'
 jobs:
   io-app-test:
     name: IO app test
