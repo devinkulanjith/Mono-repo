@@ -1,9 +1,19 @@
 name: IO actions
 'on':
     pull_request:
+      branches:
+        - master
+      types: [closed]
     push:
 
 jobs:
+  my-actions:
+    if: ${{ github.event.pull_request.merged }}
+    runs-on: ubuntu-latest
+    steps:
+    - run: |
+        echo "The PR was merged"
+
   io-app-test:
     name: IO app test
     runs-on: ubuntu-latest
