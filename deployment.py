@@ -1,4 +1,4 @@
-# import os
+import os
 # import subprocess
 
 
@@ -24,4 +24,5 @@
 
 #     for app in vtexAppLinkOrder:
 #         os.chdir(currentDirectory + '/' + app)
-        
+appListString = os.environ.get("CHANGED_FILES")
+print('applist', appListString)

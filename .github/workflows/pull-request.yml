@@ -1,9 +1,6 @@
 name: IO actions
 'on':
     pull_request:
-      branches:
-        - master
-      types: [closed]
     push:
 
 jobs:
@@ -147,32 +144,4 @@ jobs:
           app-token: ${{ secrets.CLOUDA_B2B_APP_TOKEN }}
       - name: deploy the apps
         run: chmod +x ./deployment.sh && ./deployment.sh
-        shell: bash
-
-  conditional_step:
-    runs-on: 'ubuntu-20.04'
-    if: github.event_name == 'pull_request' && github.event.action == 'closed' && github.event.pull_request.merged == true
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          # Checkout as many commits as needed for the diff
-          fetch-depth: 2
-      - shell: pwsh
-        # Give an id to the step, so we can reference it later
-        id: check_file_changed
-        run: |
-          # Diff HEAD with the previous commit
-          $diff = git diff --name-only HEAD^ HEAD
-
-          # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
-          $SourceDiff = $diff | Where-Object { $_ -match '^react-app-1/store/' -or $_ -match '^react-app-2/store/'}
-          $HasDiff = $SourceDiff.Length -gt 0
-
-          # Set the output named "docs_changed"
-          Write-Host "::set-output name=docs_changed::$HasDiff"
-
-      # Run the step only with "docs_changed" equals "True"
-      - shell: pwsh
-        # steps.<step_id>.outputs.<output name>
-        if: steps.check_file_changed.outputs.docs_changed == 'True'
-        run: echo "publish docs"  
+        shell: bash  

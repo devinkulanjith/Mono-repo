@@ -14,6 +14,9 @@ jobs:
         with:
           # Checkout as many commits as needed for the diff
           fetch-depth: 2
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
       - shell: pwsh
         # Give an id to the step, so we can reference it later
         id: check_file_changed
@@ -22,14 +25,21 @@ jobs:
           $diff = git diff --name-only HEAD^ HEAD
 
           # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
-          $SourceDiff = $diff | Where-Object { $_ -match '^react-app-1/store/'}
+          $SourceDiff = $diff | Where-Object { $_ -match '^react-app-1/store/' -or $_ -match '^react-app-2/store/'}
           $HasDiff = $SourceDiff.Length -gt 0
 
           # Set the output named "docs_changed"
           Write-Host "::set-output name=docs_changed::$HasDiff"
+          Write-Host "::set-output name=changed_file::$SourceDiff"
 
       # Run the step only with "docs_changed" equals "True"
       - shell: pwsh
         # steps.<step_id>.outputs.<output name>
         if: steps.check_file_changed.outputs.docs_changed == 'True'
-        run: echo "publish docs" 
+        run: | 
+          echo "publish docs"
+          echo "CHANGED_FILES=${{ steps.check_file_changed.outputs.changed_file }}" >> $GITHUB_ENV 
+      - name: app deployments
+        run: python3 deployment.py
+        shell: bash
+
