@@ -189,7 +189,7 @@ jobs:
         with:
           # Checkout as many commits as needed for the diff
           fetch-depth: 2
-      - shell: bash
+      - shell: pwsh
         # Give an id to the step, so we can reference it later
         id: check_file_changed
         run: |
@@ -204,7 +204,7 @@ jobs:
           Write-Host "::set-output name=docs_changed::$HasDiff"
 
       # Run the step only with "docs_changed" equals "True"
-      - shell: bash
+      - shell: pwsh
         # steps.<step_id>.outputs.<output name>
         if: steps.check_file_changed.outputs.docs_changed == 'True'
         run: echo "publish docs"  
