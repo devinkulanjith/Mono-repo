@@ -207,4 +207,4 @@ jobs:
       - shell: pwsh
         # steps.<step_id>.outputs.<output name>
         if: steps.check_file_changed.outputs.docs_changed == 'True'
-        run: echo "publish docs"  
+        run: echo "publish docsss"  
