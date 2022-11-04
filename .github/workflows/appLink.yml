@@ -2,6 +2,7 @@ name: Apps Link
 'on':
     pull_request:
 
+jobs:
   AppLink:
     runs-on: ubuntu-latest
     steps:
