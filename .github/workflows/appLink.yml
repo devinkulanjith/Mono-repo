@@ -46,5 +46,5 @@ jobs:
             echo "$file was changed" >> changeList.txt
           done
 
-          python3 deployment.py
+          python3 main.py
 
