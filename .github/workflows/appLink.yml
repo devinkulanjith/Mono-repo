@@ -43,7 +43,7 @@ jobs:
       - name: List all changed files
         run: |
           for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            echo "$file was changed"\n > test.txt
+            echo "$file was changed" >> test.txt
           done
 
           python3 deployment.py
