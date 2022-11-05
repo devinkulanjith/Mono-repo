@@ -5,7 +5,7 @@ name: deployment actions
         - master
       types: [closed]
 jobs:
-  my-actions:
+  app-deployments:
     if: ${{ github.event.pull_request.merged }}
     runs-on: ubuntu-latest
     steps:
