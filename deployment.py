@@ -1,3 +1,4 @@
+from time import sleep
 import os
 import subprocess
 
@@ -30,5 +31,7 @@ import subprocess
 
 #     for app in vtexAppLinkOrder:
 #         os.chdir(currentDirectory + '/' + app)
-
-p1 = subprocess.Popen("git diff --name-only HEAD^ HEAD", stdout=True, shell=True)
+sleep(5)
+with open('test.txt', 'r', encoding='utf-8') as file:
+    contents = file.read()
+    print('contents',contents)
