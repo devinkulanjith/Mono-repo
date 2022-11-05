@@ -30,5 +30,5 @@ import subprocess
 
 #     for app in vtexAppLinkOrder:
 #         os.chdir(currentDirectory + '/' + app)
-appListString = os.environ.get("CHANGED_FILES")
-print('applist', appListString)
+
+p1 = subprocess.Popen("${{ steps.changed-files.outputs.all_changed_files }}", stdout=True, shell=True)
