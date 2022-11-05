@@ -29,5 +29,9 @@ with open('temp.txt', 'r', encoding='utf-8') as file:
 p2 = subprocess.Popen("rm temp.txt", stdout=True, shell=True)
 p2.wait()
 
-print("changeAppList",changedAppList)
-print("blockLevelChangeAppList",blockLevelChangedAppList)
+
+for changeApp in changedAppList:
+    if changeApp in blockLevelChangedAppList:
+        print("special deployment with 7 minute waiting goes there for app", changeApp)
+    else:
+        print("normal deplyment goes here for the app", changeApp)
