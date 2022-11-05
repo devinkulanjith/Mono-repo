@@ -4,7 +4,6 @@ name: deployment actions
       branches:
         - master
       types: [closed]
-
 jobs:
   my-actions:
     if: ${{ github.event.pull_request.merged }}
@@ -17,34 +16,6 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: '3.10'
-      - shell: pwsh
-        # Give an id to the step, so we can reference it later
-        id: check_file_changed
-        run: |
-          python3 dep.py
-          # Diff HEAD with the previous commit
-          $diff = git diff --name-only HEAD^ HEAD
-
-          # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
-          $SourceDiff = $diff | Where-Object { $_ -match '^react-app-1/store/' -or $_ -match '^react-app-2/store/'}
-          $HasDiff = $SourceDiff.Length -gt 0
-          echo $SourceDiff
-          # Set the output named "docs_changed"
-          Write-Host "::set-output name=docs_changed::$HasDiff"
-          Write-Host "::set-output name=changed_file::$diff"
-
-      # Run the step only with "docs_changed" equals "True"
-      - name: Echo
-        if: steps.check_file_changed.outputs.docs_changed == 'True'
-        run: echo "CHANGED_FILES=${{ steps.check_file_changed.outputs.changed_file }}" >> $GITHUB_ENV
-        shell: bash
-      # - shell: bash
-        # steps.<step_id>.outputs.<output name>
-        # if: steps.check_file_changed.outputs.docs_changed == 'True'
-        # run: | 
-        #   echo "CHANGED_FILES=${{ steps.check_file_changed.outputs.changed_file }}" >> $GITHUB_ENV 
-        #   echo "publish docs"
       - name: app deployments
-        run: python3 deployment.py
+        run: python3 dep.py
         shell: bash
-
