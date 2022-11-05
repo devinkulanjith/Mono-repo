@@ -15,11 +15,6 @@ appListOrder = apps.readlines()
 
 vtexAppLinkOrder = []
 
-cmd = "git diff --name-only HEAD^ HEAD > changeList.txt"
-
-p1 = subprocess.Popen(cmd, stdout=True, shell=True)
-p1.wait()
-
 appList =  []
 
 with open('changeList.txt', 'r', encoding='utf-8') as file:
