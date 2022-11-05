@@ -9,6 +9,8 @@ function Greeting({ name }: Props) {
     <div>
       <div>Hey, {name}</div>
       <div>Hey, {name}</div>
+      <div>Hey, {name}</div>
+      <div>Hey, {name}</div>
     </div>
   )
 
