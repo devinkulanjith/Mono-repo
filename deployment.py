@@ -30,5 +30,5 @@ import subprocess
 
 #     for app in vtexAppLinkOrder:
 #         os.chdir(currentDirectory + '/' + app)
-appListString = os.environ.get("CHANGED_FILES")
-print('applist', appListString)
+
+p1 = subprocess.Popen("git diff --name-only HEAD^ HEAD", stdout=True, shell=True)
