@@ -32,6 +32,19 @@ jobs:
           account: cloudab2b
           app-key: ${{ secrets.CLOUDA_B2B_APP_KEY }}
           app-token: ${{ secrets.CLOUDA_B2B_APP_TOKEN }}
-      - name: app links
-        run: python3 main.py
-        shell: bash
+      # - name: app links
+      #   run: python3 main.py
+      #   shell: bash
+            # Example 1
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v34
+
+      - name: List all changed files
+        run: |
+          for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            echo "$file was changed\n" > test.txt
+          done
+
+          python3 deployment.py
+
