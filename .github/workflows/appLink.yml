@@ -1,6 +1,8 @@
 name: Apps Link
 'on':
-    push:
+  pull_request:
+    branches:
+      - master
 
 jobs:
   AppLink:
@@ -9,7 +11,7 @@ jobs:
       - uses: actions/checkout@master
         with:
           persist-credentials: false
-          fetch-depth: 0
+          fetch-depth: 2
           github_token: ${{ secrets.HUB_TOKEN }}
       - run: |
           git config --global user.email "devin.gallage@clouda.io"
@@ -30,15 +32,6 @@ jobs:
           account: cloudab2b
           app-key: ${{ secrets.CLOUDA_B2B_APP_KEY }}
           app-token: ${{ secrets.CLOUDA_B2B_APP_TOKEN }}
-      - uses: Stockopedia/action-get-changed-files@v1
-        id: get_changed
-        with:
-          github-token: ${{ secrets.CLOUDAB2B_GITHUB_TOKEN }}
-          foldersOnly: true
-          format: json
-      - name: Echo
-        run: echo "CHANGED_DIRECTORIES=${{ steps.get_changed.outputs.changed }}" >> $GITHUB_ENV
-        shell: bash
       - name: app links
         run: python3 main.py
         shell: bash

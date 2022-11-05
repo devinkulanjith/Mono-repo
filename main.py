@@ -15,9 +15,21 @@ appListOrder = apps.readlines()
 
 vtexAppLinkOrder = []
 
-appListString = os.environ.get("CHANGED_DIRECTORIES")
+p1 = subprocess.Popen("git diff --name-only HEAD^ HEAD > changeList.txt", stdout=True, shell=True)
+p1.wait()
 
-appList = appListString.split('[')[1].split(']')[0].split(',')
+appList =  []
+
+with open('changeList.txt', 'r', encoding='utf-8') as file:
+    contents = file.read()
+    for app in appListOrder:
+        appName = app.replace('\n','')
+        result = contents.find(appName)
+        if result != -1:
+            appList.append(appName)
+
+p2 = subprocess.Popen("rm changeList.txt", stdout=True, shell=True)
+p2.wait()
 
 def appLink():
     cmd = "echo 'yes' |vtex link > output.txt"
